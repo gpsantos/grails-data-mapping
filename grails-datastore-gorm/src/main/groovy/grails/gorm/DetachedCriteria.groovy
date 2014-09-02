@@ -1228,4 +1228,11 @@ class DetachedCriteria<T> implements QueryableCriteria<T>, Cloneable, Iterable<T
         // no-op for now
         this
     }
+
+
+    @Override
+    public Criteria readOnly(boolean readOnly) {
+        // no-op for now
+        this
+    }
 }
