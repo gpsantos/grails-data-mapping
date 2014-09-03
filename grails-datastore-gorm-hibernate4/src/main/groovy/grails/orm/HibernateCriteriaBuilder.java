@@ -237,5 +237,13 @@ public class HibernateCriteriaBuilder extends AbstractHibernateCriteriaBuilder {
         detachedCriteria.setProjection(projectionList);
     }
 
-
+    /**
+     * Whether to check for changes on the objects loaded
+     * @param readOnly True to disable dirty checking
+     */
+    @Override
+    public org.grails.datastore.mapping.query.api.Criteria readOnly(boolean readOnly) {
+        criteria.setReadOnly(readOnly);
+        return this;
+    }
 }

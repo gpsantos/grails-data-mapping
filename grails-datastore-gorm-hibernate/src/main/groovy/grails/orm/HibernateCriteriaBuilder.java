@@ -255,4 +255,14 @@ public class HibernateCriteriaBuilder extends AbstractHibernateCriteriaBuilder {
             criteriaMetaClass = GroovySystem.getMetaClassRegistry().getMetaClass(criteria.getClass());
         }
     }
+
+    /**
+     * Whether to check for changes on the objects loaded
+     * @param readOnly True to disable dirty checking
+     */
+    @Override
+    public org.grails.datastore.mapping.query.api.Criteria readOnly(boolean readOnly) {
+        criteria.setReadOnly(readOnly);
+        return this;
+    }
 }

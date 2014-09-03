@@ -307,8 +307,8 @@ public abstract class AbstractHibernateCriteriaBuilder extends GroovyObjectSuppo
      * @param readOnly True to disable dirty checking
      */
     public org.grails.datastore.mapping.query.api.Criteria readOnly(boolean readOnly) {
-        criteria.setReadOnly(readOnly);
-        return this;
+        throwRuntimeException(new UnsupportedOperationException("readOnly isn't supported on this implementation of HibernateCriteriaBuilder"));
+        return null;
     }
 
     /**
